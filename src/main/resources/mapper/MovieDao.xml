@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ycl.property.movie.dao.MovieDao">
+    
+    <resultMap id="movieAllColumns" type="com.ycl.property.movie.dto.Movie">
+        <result column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="directors" property="directors"/>
+        <result column="rate" property="rate"/>
+        <result column="cover" property="cover"/>
+        <result column="casts" property="casts"/>
+    </resultMap>
+
+    <select id="selectAllMovie" resultMap="movieAllColumns">
+        select m.id,m.title,m.directors,m.rate,m.casts,m.cover 
+        from movie m
+    </select>
+
+</mapper>
